@@ -12,7 +12,7 @@ public class Head : MonoBehaviour
     /// </summary>
     /// <param name="questionIndex">index of the question being asked</param>
     /// <returns>answer to the question in the form of a string</returns>
-    public string answerQuestion(int questionIndex)
+    public string AnswerQuestion(int questionIndex)
     {
         return answers[questionIndex];
     }
