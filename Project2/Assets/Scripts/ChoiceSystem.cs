@@ -5,14 +5,31 @@ using UnityEngine;
 public class ChoiceSystem : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] DialogueManager dialogue;
+    [SerializeField] UIManager ui;
 
     [Header("Settings")]
     [Tooltip("Index of main list relates to the current level")]
     [SerializeField] List<LevelData> levels;
 
-    //private Head currentHead;
-    //private List<Heart> currentHeart;
+
+    private int currentLevel;
+    private int currentHeartIndex;
+    private Head currentHead;
+    private Heart currentHeart;
+
+    private void Start()
+    {
+        InitializeData();
+    }
+
+    private void Update()
+    {
+        // Check if player every tries to burn current pair 
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            print("Burn");
+        }
+    }
 
     /// <summary>
     /// This function sets up the UI with the proper heart and head data 
@@ -21,32 +38,45 @@ public class ChoiceSystem : MonoBehaviour
     {
         // Get all the head and heart data
         // Pass into UI manager 
+
+        currentLevel = 0;
+        currentHeartIndex = 0;
+
+        currentHead = levels[currentLevel].head;
+        currentHeart = levels[currentLevel].hearts[currentHeartIndex]; // Gets first heart on list 
+
+        ui.SetUpLevel(
+            levels[currentLevel].questions[0],
+            levels[currentLevel].questions[1],
+            levels[currentLevel].questions[2]
+            );
     }
 
     /// <summary>
     /// Call when the player makes a choice from the pool of questions 
     /// </summary>
-    /// <param name="question"></param>
-    public void RunPlayerQuestion(int question)
+    /// <param name="questionIndex"></param>
+    public void RunPlayerQuestion(int questionIndex)
     {
         // Make sure int is within range of head and hearts 
         // Default is "..." and "indifference" 
 
-        // Get the current head 
-        // Get the current heart 
-
         // Runs index through head question function and hold string 
         // Runs index through heart question function and hold enum
+        string headResponse = currentHead.AnswerQuestion(questionIndex);
+        Emotion heartResponse = currentHeart.AnswerQuestion(questionIndex);
 
         // Runs response of head through dialogue 
         // Runs emotion of heart through heart display in UI
+
+        ui.DisplayDialogue(headResponse, heartResponse);
     }
 
     [System.Serializable]
     public class LevelData
     {
+        [SerializeField] public Head head;
         [SerializeField] public List<string> questions;
-        //[SerializeField] List<Head> heads;
-        //[SerializeField] List<List<Heart>> hearts;
+        [SerializeField] public List<Heart> hearts;
     }
 }

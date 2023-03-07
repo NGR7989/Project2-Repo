@@ -7,11 +7,11 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] float clearSpeed;
 
-    [Header("Temproary testing paramters")]
+    /*[Header("Temproary testing paramters")]
     [TextArea(5, 10)]
     [SerializeField] string testText;
     [SerializeField] TextMeshProUGUI testTextMesh;
-    [SerializeField] float testTextSpeed;
+    [SerializeField] float testTextSpeed;*/
 
     private Dictionary<TextMeshProUGUI, Coroutine> dialogueCoroutines;
 
@@ -87,10 +87,11 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ClearText(TextMeshProUGUI textMesh, float clearSpeed)
     {
+        print("test");
+
         while (textMesh.text.Length > 0)
         {
             textMesh.text = textMesh.text.Remove(textMesh.text.Length - 1, 1);
-            
             yield return new WaitForSeconds(clearSpeed);
         }
     }

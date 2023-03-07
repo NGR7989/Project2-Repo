@@ -15,13 +15,28 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        DisplayDialogue();
-        DisplayQuestions();
+        /*DisplayDialogue("test dialogue box yass (insert index here)");
+        DisplayQuestions("Test 1", "Test 2", "Test 3");*/
     }
 
-    private void DisplayDialogue()
+    /// <summary>
+    /// Called at the beginning of each level switch in order
+    /// to swap out questions and set up proper textures 
+    /// </summary>
+    /// <param name="q1"></param>
+    /// <param name="q2"></param>
+    /// <param name="q3"></param>
+    public void SetUpLevel(string q1, string q2, string q3)
     {
-        dialogue.GetComponent<DialogueManager>().ReadDialogue("test dialogue box yass (insert index here)", dialogueBox, 0.1f);
+        DisplayQuestions(q1, q2, q3);
+        DisplayCharacter(); // Take in a texture? 
+        ChangeHeart(); // Sets up the first heart 
+    }
+
+    public void DisplayDialogue(string headResponse, Emotion heartResponse)
+    {
+        dialogue.ReadDialogue(headResponse, dialogueBox, 0.1f);
+        print(heartResponse);
     }
 
     private void DisplayCharacter()
@@ -29,17 +44,29 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private void DisplayQuestions()
+    private void DisplayQuestions(string q1, string q2, string q3)
     {
-        q1Text.text = "test1";
-        q2Text.text = "test2";
-        q3Text.text = "test3";
-
-        
+        q1Text.text = q1;
+        q2Text.text = q2;
+        q3Text.text = q3;
     }
 
     private void ChangeHeart()
     {
 
+    }
+
+
+    /// <summary>
+    /// This function is used by buttons on the canvas to 
+    /// send information to the ChoiceSystem 
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public void GetQuestionIndexFromButton(int index)
+    {
+        // Index is displayed and can be changed in editor 
+
+        choices.RunPlayerQuestion(index);
     }
 }
