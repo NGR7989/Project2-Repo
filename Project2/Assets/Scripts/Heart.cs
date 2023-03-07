@@ -25,7 +25,7 @@ public class Heart : MonoBehaviour
     public bool CorrectMatch()
     {
         // Check if the parent object is a head through its tag
-        if (transform.parent.gameObject.CompareTag("Head"))
+        if (transform.gameObject.CompareTag("Head"))
         {
             // print("Correct heart"); // Test code
             return true;

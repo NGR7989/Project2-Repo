@@ -30,12 +30,11 @@ public class UIManager : MonoBehaviour
     {
         DisplayQuestions(q1, q2, q3);
         DisplayCharacter(); // Take in a texture? 
-        ChangeHeart(); // Sets up the first heart 
     }
 
     public void DisplayDialogue(string headResponse, Emotion heartResponse)
     {
-        dialogue.ReadDialogue(headResponse, dialogueBox, 0.1f);
+        dialogue.ReadDialogue(headResponse, dialogueBox, 0.05f);
         print(heartResponse);
     }
 
@@ -51,9 +50,12 @@ public class UIManager : MonoBehaviour
         q3Text.text = q3;
     }
 
-    private void ChangeHeart()
+    /// <summary>
+    /// The button press that changes the current heart 
+    /// </summary>
+    public void ChangeHeart(bool isPositive)
     {
-
+        choices.ChangeHeart(isPositive);
     }
 
 

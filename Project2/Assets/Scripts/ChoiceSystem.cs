@@ -15,7 +15,7 @@ public class ChoiceSystem : MonoBehaviour
     private int currentLevel;
     private int currentHeartIndex;
     private Head currentHead;
-    private Heart currentHeart;
+    private Heart currentHeart { get { return levels[currentLevel].hearts[currentHeartIndex]; } }
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class ChoiceSystem : MonoBehaviour
         // Check if player every tries to burn current pair 
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            print(currentHeart.CorrectMatch() ? "Correct" : "Inccorect");
+            print(currentHeart.CorrectMatch());
         }
     }
 
@@ -43,13 +43,42 @@ public class ChoiceSystem : MonoBehaviour
         currentHeartIndex = 0;
 
         currentHead = levels[currentLevel].head;
-        currentHeart = levels[currentLevel].hearts[currentHeartIndex]; // Gets first heart on list 
 
         ui.SetUpLevel(
             levels[currentLevel].questions[0],
             levels[currentLevel].questions[1],
             levels[currentLevel].questions[2]
             );
+    }
+
+    public void ChangeHeart(bool isPositive)
+    {
+        int nextIndex = currentHeartIndex;
+
+        if(isPositive)
+        {
+            // Moves up 
+            nextIndex++;
+
+            if(nextIndex >= levels[currentLevel].hearts.Count)
+            {
+                nextIndex = 0;
+            }
+        }
+        else
+        {
+            // Moves down 
+            nextIndex--;
+
+            if (nextIndex < 0)
+            {
+                nextIndex = levels[currentLevel].hearts.Count - 1;
+            }
+        }
+
+        // Sets to new index after processing 
+        currentHeartIndex = nextIndex;
+        print("New heart is " + currentHeart.name);
     }
 
     /// <summary>
