@@ -10,21 +10,21 @@ public class DialogueManager : MonoBehaviour
     [Header("Temproary testing paramters")]
     [TextArea(5, 10)]
     [SerializeField] string testText;
-    [SerializeField] TextMeshPro testTextMesh;
+    [SerializeField] TextMeshProUGUI testTextMesh;
     [SerializeField] float testTextSpeed;
 
-    private Dictionary<TextMeshPro, Coroutine> dialogueCoroutines;
+    private Dictionary<TextMeshProUGUI, Coroutine> dialogueCoroutines;
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogueCoroutines = new Dictionary<TextMeshPro, Coroutine>();
+        dialogueCoroutines = new Dictionary<TextMeshProUGUI, Coroutine>();
 
         // Purely for testing 
         ReadDialogue(testText, testTextMesh, testTextSpeed);
     }
 
-    public void ReadDialogue(string text, TextMeshPro textMesh, float pauseTime)
+    public void ReadDialogue(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
 
         // Check first if must be cleared
@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void SafeAddTyping(string text, TextMeshPro textMesh, float pauseTime)
+    private void SafeAddTyping(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         // Checks index for active coroutines
         if (dialogueCoroutines.ContainsKey(textMesh))
@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="text"></param>
     /// <param name="textMesh"></param>
     /// <param name="pauseTime"></param>
-    private void RunReadDialogueAfterClearing(string text, TextMeshPro textMesh, float pauseTime)
+    private void RunReadDialogueAfterClearing(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         StartCoroutine(RunReadDialogueAfterClearingCo(text, textMesh, pauseTime));
     }
@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="textMesh"></param>
     /// <param name="clearSpeed"></param>
     /// <returns></returns>
-    private IEnumerator ClearText(TextMeshPro textMesh, float clearSpeed)
+    private IEnumerator ClearText(TextMeshProUGUI textMesh, float clearSpeed)
     {
         while (textMesh.text.Length > 0)
         {
@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="textMesh"></param>
     /// <param name="pauseTime"></param>
     /// <returns></returns>
-    private IEnumerator ReadDialogueCo(string text, TextMeshPro textMesh, float pauseTime)
+    private IEnumerator ReadDialogueCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         for (int i = 0; i < text.Length; i++)
         {
@@ -129,7 +129,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="textMesh"></param>
     /// <param name="pauseTime"></param>
     /// <returns></returns>
-    private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshPro textMesh, float pauseTime)
+    private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         yield return StartCoroutine(ClearText(textMesh, clearSpeed));
         SafeAddTyping(text, textMesh, pauseTime);
