@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCoroutines = new Dictionary<TextMeshProUGUI, Coroutine>();
 
         // Purely for testing 
-        ReadDialogue(testText, testTextMesh, testTextSpeed);
+        // ReadDialogue(testText, testTextMesh, testTextSpeed);
     }
 
     public void ReadDialogue(string text, TextMeshProUGUI textMesh, float pauseTime)
