@@ -1,0 +1,9 @@
+{
+    "level-1": 
+    {
+        "head": ["answer1", "answer2"],
+        "heart1": ["emotion1", "emotion2"],
+        "heart2": ["emotion1", "emotion2"],
+        "heart3": ["emotion1", "emotion2"]
+    }
+}
