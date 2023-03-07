@@ -6,14 +6,19 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] ChoiceSystem choices;
     [SerializeField] DialogueManager dialogue;
 
-    [SerializeField] Button nextHeart, prevHeart, question1, question2, question3;
-    [SerializeField] TextMeshProUGUI q1Text, q2Text, q3Text;
+    [Header("UI")]
     [SerializeField] TextMeshProUGUI dialogueBox;
+    [SerializeField] TextMeshProUGUI q1Text, q2Text, q3Text;
     [Space]
     [SerializeField] Image heartRenderer;
+    [SerializeField] Image emotionRenderer;
+
+    [Header("Texture References")]
+    [SerializeField] Emotions emotions;
 
     private void Start()
     {
@@ -34,9 +39,17 @@ public class UIManager : MonoBehaviour
         DisplayCharacter(); // Take in a texture? 
     }
 
+    /// <summary>
+    /// Displays the reponse from both the head and heart 
+    /// </summary>
+    /// <param name="headResponse"></param>
+    /// <param name="heartResponse"></param>
     public void DisplayDialogue(string headResponse, Emotion heartResponse)
     {
         dialogue.ReadDialogue(headResponse, dialogueBox, 0.05f);
+
+        // Sets the new sprite based on emotion
+        emotionRenderer.sprite = emotions.GetSprite(heartResponse); 
         print(heartResponse);
     }
 
@@ -73,5 +86,41 @@ public class UIManager : MonoBehaviour
         // Index is displayed and can be changed in editor 
 
         choices.RunPlayerQuestion(index);
+    }
+
+
+
+    [System.Serializable]
+    private struct Emotions
+    {
+        [SerializeField] public Sprite anger;
+        [SerializeField] public Sprite surprise;
+        [SerializeField] public Sprite disgust;
+        [SerializeField] public Sprite fear;
+        [SerializeField] public Sprite happy;
+        [SerializeField] public Sprite sad;
+        [SerializeField] public Sprite indifference;
+
+        public Sprite GetSprite(Emotion emotion)
+        {
+            switch (emotion)
+            {
+                case Emotion.Sadness:
+                    return sad;
+                case Emotion.Happiness:
+                    return happy;
+                case Emotion.Fear:
+                    return fear;
+                case Emotion.Anger:
+                    return anger;
+                case Emotion.Surprise:
+                    return surprise;
+                case Emotion.Disgust:
+                    return disgust;
+                case Emotion.Indifference:
+                default:
+                    return indifference;
+            }
+        }
     }
 }

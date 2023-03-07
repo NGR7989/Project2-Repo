@@ -2833,16 +2833,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choices: {fileID: 1587476274}
   dialogue: {fileID: 1113535676}
-  nextHeart: {fileID: 1269539240}
-  prevHeart: {fileID: 2102206418}
-  question1: {fileID: 1381517605}
-  question2: {fileID: 1153086080}
-  question3: {fileID: 1379299330}
+  dialogueBox: {fileID: 2020922157}
   q1Text: {fileID: 208354832}
   q2Text: {fileID: 1899068225}
   q3Text: {fileID: 1097557725}
-  dialogueBox: {fileID: 2020922157}
   heartRenderer: {fileID: 595574673}
+  emotionRenderer: {fileID: 1212899496}
+  emotions:
+    anger: {fileID: 21300000, guid: c79038efec9345049aee604b791f1de1, type: 3}
+    surprise: {fileID: 21300000, guid: b2fe6be6f119f4c42bfb21cb029d7096, type: 3}
+    disgust: {fileID: 21300000, guid: f300fa92d6504764daeab31beb892d58, type: 3}
+    fear: {fileID: 21300000, guid: 93963c74599afd54ba80597afdf0fe76, type: 3}
+    happy: {fileID: 21300000, guid: 9c9563369c18ba44f826d5d46b9152c2, type: 3}
+    sad: {fileID: 21300000, guid: a117eebb3e445244799b9129e15f99c3, type: 3}
+    indifference: {fileID: 21300000, guid: e0192d955d7a0ca4dafc55bb0e4d8335, type: 3}
 --- !u!4 &1587476273
 Transform:
   m_ObjectHideFlags: 0
