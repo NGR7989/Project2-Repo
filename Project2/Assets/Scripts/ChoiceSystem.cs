@@ -83,7 +83,6 @@ public class ChoiceSystem : MonoBehaviour
 
     public Sprite GetHeartTexutre()
     {
-        print(currentHeart.GetSprite);
         return currentHeart.GetSprite;
     }
 
