@@ -5,6 +5,9 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     [SerializeField] List<Emotion> answers;
+    [SerializeField] Sprite sprite;
+
+    public Sprite GetSprite { get { return sprite; } }
 
     /// <summary>
     /// Returns the emotion that is stored in 

@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button nextHeart, prevHeart, question1, question2, question3;
     [SerializeField] TextMeshProUGUI q1Text, q2Text, q3Text;
     [SerializeField] TextMeshProUGUI dialogueBox;
+    [Space]
+    [SerializeField] Image heartRenderer;
 
     private void Start()
     {
@@ -56,6 +58,7 @@ public class UIManager : MonoBehaviour
     public void ChangeHeart(bool isPositive)
     {
         choices.ChangeHeart(isPositive);
+        heartRenderer.sprite = choices.GetHeartTexutre();
     }
 
 

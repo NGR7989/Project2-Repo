@@ -81,6 +81,12 @@ public class ChoiceSystem : MonoBehaviour
         print("New heart is " + currentHeart.name);
     }
 
+    public Sprite GetHeartTexutre()
+    {
+        print(currentHeart.GetSprite);
+        return currentHeart.GetSprite;
+    }
+
     /// <summary>
     /// Call when the player makes a choice from the pool of questions 
     /// </summary>

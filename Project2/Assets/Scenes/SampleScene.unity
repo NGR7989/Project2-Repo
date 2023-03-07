@@ -632,6 +632,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
+    - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: texture
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
+    - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: answers.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
@@ -1117,7 +1125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1212,6 +1220,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670684359}
   m_CullTransparentMesh: 1
+--- !u!114 &886322043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+  m_PrefabInstance: {fileID: 1962349439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd593bcfe9a8a4d43b07768327125911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &886322044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+  m_PrefabInstance: {fileID: 1962349439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0e616385273fc47b5feb54afa5c8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &889009617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2842,7 @@ MonoBehaviour:
   q2Text: {fileID: 1899068225}
   q3Text: {fileID: 1097557725}
   dialogueBox: {fileID: 2020922157}
+  heartRenderer: {fileID: 595574673}
 --- !u!4 &1587476273
 Transform:
   m_ObjectHideFlags: 0
@@ -2841,13 +2872,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 1587476272}
   levels:
-  - head: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+  - head: {fileID: 886322044}
     questions:
     - Quesh A
     - Quesh B
     - Quesh C
     hearts:
-    - {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+    - {fileID: 886322043}
     - {fileID: 398902311}
 --- !u!1 &1717018867
 GameObject:
@@ -3126,9 +3157,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
+    - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: texture
+      value: 
+      objectReference: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
     - target: {fileID: 4573411902069686082, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: m_Name
       value: SampleHeadAndHeartA
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573411902069686082, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: m_TagString
+      value: Head
       objectReference: {fileID: 0}
     - target: {fileID: 4573411902069686095, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: m_RootOrder
