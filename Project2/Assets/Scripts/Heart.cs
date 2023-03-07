@@ -7,6 +7,14 @@ public class Heart : MonoBehaviour
     [SerializeField] List<Emotion> answers;
 
     /// <summary>
+    /// Test code disregard
+    /// </summary>
+    private void Start()
+    {
+        CorrectMatch();
+    }
+
+    /// <summary>
     /// Returns the emotion that is stored in 
     /// the given index of the hearts answers list
     /// </summary>
@@ -25,13 +33,13 @@ public class Heart : MonoBehaviour
     public bool CorrectMatch()
     {
         // Check if the parent object is a head through its tag
-        if (transform.parent.gameObject.CompareTag("Head"))
+        if (this.gameObject.CompareTag("Correct"))
         {
-            // print("Correct heart"); // Test code
+            print("Correct heart - " + this.gameObject.name); // Test code
             return true;
         }
 
-
+        print("Incorrect heart - " + this.gameObject.name); // Test code
         return false;
     }
 }
