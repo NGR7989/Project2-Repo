@@ -5,7 +5,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] float clearSpeed;
+    [SerializeField] float clearPauseTime;
 
     /*[Header("Temproary testing paramters")]
     [TextArea(5, 10)]
@@ -87,8 +87,6 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ClearText(TextMeshProUGUI textMesh, float clearSpeed)
     {
-        print("test");
-
         while (textMesh.text.Length > 0)
         {
             textMesh.text = textMesh.text.Remove(textMesh.text.Length - 1, 1);
@@ -120,6 +118,8 @@ public class DialogueManager : MonoBehaviour
 
             yield return new WaitForSeconds(pauseTime);
         }
+
+        dialogueCoroutines[textMesh] = null;
     }
 
     /// <summary>
@@ -132,7 +132,7 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
-        yield return StartCoroutine(ClearText(textMesh, clearSpeed));
+        yield return StartCoroutine(ClearText(textMesh, clearPauseTime));
         SafeAddTyping(text, textMesh, pauseTime);
     }
 }

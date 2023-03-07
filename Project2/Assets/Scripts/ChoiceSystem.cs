@@ -27,7 +27,7 @@ public class ChoiceSystem : MonoBehaviour
         // Check if player every tries to burn current pair 
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            print("Burn");
+            print(currentHeart.CorrectMatch() ? "Correct" : "Inccorect");
         }
     }
 

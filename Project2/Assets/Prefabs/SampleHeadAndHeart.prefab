@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   answers:
   - The first answer
-  - 2
-  - 3
+  - The second answer
+  - The third answer
 --- !u!114 &4573411902069686081
 MonoBehaviour:
   m_ObjectHideFlags: 0

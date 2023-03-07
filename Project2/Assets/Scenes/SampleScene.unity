@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54b771fa604d7041a895775917a9252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearSpeed: 0.1
+  clearPauseTime: 0.01
 --- !u!4 &1113535677
 Transform:
   m_ObjectHideFlags: 0
@@ -1792,7 +1792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1153086081}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1587476272}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GetQuestionIndexFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1153086081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,7 +2416,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1379299331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1587476272}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GetQuestionIndexFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1379299331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,7 +2550,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1381517606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1587476272}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GetQuestionIndexFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1381517606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2652,6 +2688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587476273}
   - component: {fileID: 1587476272}
+  - component: {fileID: 1587476274}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2671,7 +2708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9a4ce5d473714459370f7a0806104e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choices: {fileID: 0}
+  choices: {fileID: 1587476274}
   dialogue: {fileID: 1113535676}
   nextHeart: {fileID: 1269539240}
   prevHeart: {fileID: 2102206418}
@@ -2697,6 +2734,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1587476274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587476271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4006c18514e4c44982c77b28037bcee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1587476272}
+  levels:
+  - head: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+    questions:
+    - Quesh A
+    - Quesh B
+    - Quesh C
+    hearts:
+    - {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+    - {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+    - {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+    - {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
 --- !u!1 &1717018867
 GameObject:
   m_ObjectHideFlags: 0
