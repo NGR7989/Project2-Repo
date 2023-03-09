@@ -6,6 +6,7 @@ public class ChoiceSystem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] UIManager ui;
+    [SerializeField] GameObject endScreen;
 
     [Header("Settings")]
     [Tooltip("Index of main list relates to the current level")]
@@ -28,6 +29,7 @@ public class ChoiceSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Return))
         {
             print(currentHeart.CorrectMatch());
+            endScreen.SetActive(true);
         }
     }
 
