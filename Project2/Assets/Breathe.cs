@@ -39,7 +39,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localPosition = Vector3.LerpUnclamped(holdPos, holdPos + targetOffset, toTargetCurve.Evaluate(lerp));
+                rect.localPosition = Vector3.Lerp(holdPos, holdPos + targetOffset, toTargetCurve.Evaluate(lerp));
                 
                 lerp += Time.deltaTime * moveToTargetSpeed;
                 yield return null;
@@ -52,7 +52,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localPosition = Vector3.LerpUnclamped(holdPos + targetOffset, holdPos, toHoldCurve.Evaluate(lerp));
+                rect.localPosition = Vector3.Lerp(holdPos + targetOffset, holdPos, toHoldCurve.Evaluate(lerp));
 
                 lerp += Time.deltaTime * moveToTHoldSpeed;
                 yield return null;
@@ -70,7 +70,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localEulerAngles = Vector3.LerpUnclamped(Vector3.zero, Vector3.forward * angle, tiltCurve.Evaluate(lerp));
+                rect.localEulerAngles = Vector3.Lerp(Vector3.zero, Vector3.forward * angle, tiltCurve.Evaluate(lerp));
 
                 lerp += Time.deltaTime * tiltSpeed;
                 yield return null;
@@ -83,7 +83,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localEulerAngles = Vector3.LerpUnclamped( Vector3.forward * angle, Vector3.zero, tiltCurve.Evaluate(lerp));
+                rect.localEulerAngles = Vector3.Lerp( Vector3.forward * angle, Vector3.zero, tiltCurve.Evaluate(lerp));
 
                 lerp += Time.deltaTime * tiltSpeed;
                 yield return null;
@@ -96,7 +96,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localEulerAngles = Vector3.LerpUnclamped(Vector3.zero, -Vector3.forward * angle, tiltCurve.Evaluate(lerp));
+                rect.localEulerAngles = Vector3.Lerp(Vector3.zero, -Vector3.forward * angle, tiltCurve.Evaluate(lerp));
 
                 lerp += Time.deltaTime * tiltSpeed;
                 yield return null;
@@ -109,7 +109,7 @@ public class Breathe : MonoBehaviour
             while (lerp <= 1)
             {
 
-                rect.localEulerAngles = Vector3.LerpUnclamped(-Vector3.forward * angle, Vector3.zero, tiltCurve.Evaluate(lerp));
+                rect.localEulerAngles = Vector3.Lerp(-Vector3.forward * angle, Vector3.zero, tiltCurve.Evaluate(lerp));
 
                 lerp += Time.deltaTime * tiltSpeed;
                 yield return null;
