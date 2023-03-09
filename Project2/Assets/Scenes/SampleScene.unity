@@ -3331,6 +3331,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: answers.Array.data[0]
+      value: Paladin Dante Kambal at your service, sir!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: answers.Array.data[1]
+      value: Fighting for the glory of the Holy Kingdom of Ethshar, sir!  Exterminating
+        some cockroaches that just don't seem to die.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
+      propertyPath: answers.Array.data[2]
+      value: One of them stabbed me, but I stabbed him back.  If I'm going down,
+        I'm dragging him with me.
+      objectReference: {fileID: 0}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
