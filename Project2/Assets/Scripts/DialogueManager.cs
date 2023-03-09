@@ -6,6 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] float clearPauseTime;
+    [SerializeField] float clearPauseBeforeContinue;
 
     /*[Header("Temproary testing paramters")]
     [TextArea(5, 10)]
@@ -14,11 +15,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float testTextSpeed;*/
 
     private Dictionary<TextMeshProUGUI, Coroutine> dialogueCoroutines;
+    private Dictionary<TextMeshProUGUI, Coroutine> clearCoroutines;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueCoroutines = new Dictionary<TextMeshProUGUI, Coroutine>();
+        clearCoroutines = new Dictionary<TextMeshProUGUI, Coroutine>();
 
         // Purely for testing 
         // ReadDialogue(testText, testTextMesh, testTextSpeed);
@@ -26,6 +29,17 @@ public class DialogueManager : MonoBehaviour
 
     public void ReadDialogue(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
+
+        if (clearCoroutines.ContainsKey(textMesh))
+        {
+            // Don't continue if something is working on that textMesh
+            if (dialogueCoroutines[textMesh] != null)
+            {
+                return;
+            }
+
+            print(dialogueCoroutines[textMesh] != null);
+        }
 
         // Check first if must be cleared
         if (textMesh.text.Length == 0)
@@ -87,11 +101,24 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ClearText(TextMeshProUGUI textMesh, float clearSpeed)
     {
+        // Clear out other typing if happening at the same time 
+        if (dialogueCoroutines.ContainsKey(textMesh))
+        {
+            if (dialogueCoroutines[textMesh] != null)
+            {
+                StopCoroutine(dialogueCoroutines[textMesh]);
+            }
+        }
+
+        // Continue to cleare until nothing is left 
         while (textMesh.text.Length > 0)
         {
             textMesh.text = textMesh.text.Remove(textMesh.text.Length - 1, 1);
             yield return new WaitForSeconds(clearSpeed);
         }
+
+        // Cleanup
+        clearCoroutines[textMesh] = null;
     }
 
     /// <summary>
@@ -132,7 +159,21 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
-        yield return StartCoroutine(ClearText(textMesh, clearPauseTime));
+        Coroutine clearCo = StartCoroutine(ClearText(textMesh, clearPauseTime));
+
+        // Considering to implement multiple clear cos 
+        /*if(clearCoroutines.ContainsKey(textMesh))
+        {
+            if(clearCoroutines[textMesh] != null)
+            {
+                //StopCoroutine(clearCoroutines[textMesh]);
+            }
+        }
+
+        clearCoroutines[textMesh] = clearCo;*/
+
+        yield return clearCo;
+        yield return new WaitForSeconds(clearPauseBeforeContinue);
         SafeAddTyping(text, textMesh, pauseTime);
     }
 }
