@@ -8,14 +8,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float clearPauseTime;
     [SerializeField] float clearPauseBeforeContinue;
 
-    /*[Header("Temproary testing paramters")]
-    [TextArea(5, 10)]
-    [SerializeField] string testText;
-    [SerializeField] TextMeshProUGUI testTextMesh;
-    [SerializeField] float testTextSpeed;*/
-
     private Dictionary<TextMeshProUGUI, Coroutine> dialogueCoroutines;
     private Dictionary<TextMeshProUGUI, Coroutine> clearCoroutines;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +27,12 @@ public class DialogueManager : MonoBehaviour
 
         if (clearCoroutines.ContainsKey(textMesh))
         {
+
             // Don't continue if something is working on that textMesh
             if (dialogueCoroutines[textMesh] != null)
             {
                 return;
             }
-
-            print(dialogueCoroutines[textMesh] != null);
         }
 
         // Check first if must be cleared
@@ -90,6 +84,27 @@ public class DialogueManager : MonoBehaviour
     private void RunReadDialogueAfterClearing(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         StartCoroutine(RunReadDialogueAfterClearingCo(text, textMesh, pauseTime));
+    }
+
+    /// <summary>
+    /// This functions tells the user whether or not 
+    /// the textmesh current has a coroutine running 
+    /// to type on it 
+    /// </summary>
+    /// <param name="textMesh"></param>
+    /// <returns></returns>
+    public bool IsRunning(TextMeshProUGUI textMesh)
+    {
+        bool hasTextmesh = dialogueCoroutines.ContainsKey(textMesh);
+
+        if(hasTextmesh)
+        {
+            return dialogueCoroutines[textMesh] != null;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
@@ -160,18 +175,6 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         Coroutine clearCo = StartCoroutine(ClearText(textMesh, clearPauseTime));
-
-        // Considering to implement multiple clear cos 
-        /*if(clearCoroutines.ContainsKey(textMesh))
-        {
-            if(clearCoroutines[textMesh] != null)
-            {
-                //StopCoroutine(clearCoroutines[textMesh]);
-            }
-        }
-
-        clearCoroutines[textMesh] = clearCo;*/
-
         yield return clearCo;
         yield return new WaitForSeconds(clearPauseBeforeContinue);
         SafeAddTyping(text, textMesh, pauseTime);

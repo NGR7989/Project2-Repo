@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     [Header("Texture References")]
     [SerializeField] Emotions emotions;
 
+    private string currentResponse;
+
     private void Start()
     {
         /*DisplayDialogue("test dialogue box yass (insert index here)");
@@ -46,11 +48,16 @@ public class UIManager : MonoBehaviour
     /// <param name="heartResponse"></param>
     public void DisplayDialogue(string headResponse, Emotion heartResponse)
     {
+        if(dialogue.IsRunning(dialogueBox) || currentResponse == headResponse)
+        {
+            return;
+        }
+
         dialogue.ReadDialogue(headResponse, dialogueBox, 0.05f);
+        currentResponse = headResponse;
 
         // Sets the new sprite based on emotion
         emotionRenderer.sprite = emotions.GetSprite(heartResponse); 
-        print(heartResponse);
     }
 
     private void DisplayCharacter()
