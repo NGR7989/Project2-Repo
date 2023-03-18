@@ -1105,6 +1105,8 @@ MonoBehaviour:
   - desc: 
     focusPoint: {x: 0, y: 0, z: 0}
     radius: 1
+  gameManager: {fileID: 1587476271}
+  tutCanvas: {fileID: 1160666746}
 --- !u!4 &453495729
 Transform:
   m_ObjectHideFlags: 0
@@ -4872,7 +4874,7 @@ GameObject:
   - component: {fileID: 1587476272}
   - component: {fileID: 1587476274}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: Game Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

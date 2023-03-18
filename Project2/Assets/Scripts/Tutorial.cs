@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
+    [Header("Animation settings")]
     [SerializeField] RectTransform focus;
     [SerializeField] float transitionSpeed;
     [SerializeField] AnimationCurve transitionCurvePos;
@@ -11,9 +12,17 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] List<TutPart> tutorialParts;
 
+    [Header("References")]
+    [SerializeField] GameObject gameManager;
+    [SerializeField] GameObject tutCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Disable game scripts 
+        gameManager.SetActive(false);
+
+
         StartCoroutine(TutorialCo());
     }
 
@@ -36,11 +45,19 @@ public class Tutorial : MonoBehaviour
             yield return StartCoroutine(FocusCo(tutorialParts[i]));
 
             // Loops until continue is pressed 
-            while (!Input.GetMouseButtonDown(0))
+            // Will not loop if final animation was just played 
+            while (!Input.GetMouseButtonDown(0) && i < tutorialParts.Count - 1)
             {
                 yield return null;
             }
         }
+
+        // Re enable everything 
+        gameManager.SetActive(true);
+
+        // No longer needed
+        Destroy(tutCanvas);
+        Destroy(this.gameObject); 
     }
 
     private IEnumerator FocusCo(TutPart partDetails)
