@@ -3,25 +3,20 @@ using UnityEngine;
 
 public class JsonLoader : MonoBehaviour
 {
-    private string file = "./Assets/Scripts/json-files/test.json";
+    public TextAsset textJSON;
+    [SerializeField] public GameObject heartsObject;
+    public Heart[] heartsArray;
 
     // Start is called before the first frame update
     void Start()
     {
-        StreamReader streamIn = new StreamReader(file);
+        //for (int i = 0; i < heartsArray.Length; i++)
+        //{
+        //    heartsArray[i] = heartsObject.transform.GetChild(i).gameObject.GetComponent<Heart>();
+        //    print(heartsArray[i]);
+        //}
 
-        string line;
-        string jsonStr = "";
-
-        while((line = streamIn.ReadLine()) != null)
-        {
-            print(line);
-            jsonStr += line;
-        }
-
-        print(jsonStr);
-        // object json = JsonUtility.ToJson(jsonStr);
-        // print(json);
+        heartsArray = JsonUtility.FromJson<Heart[]>(textJSON.text);
     }
 
     // Update is called once per frame
