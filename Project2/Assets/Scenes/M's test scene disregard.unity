@@ -277,8 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textJSON: {fileID: 4900000, guid: 6bd589d04ef862342ae77b5cf59c618d, type: 3}
-  heartsObject: {fileID: 1482228}
-  heartsArray: []
+  hearts: {fileID: 1482228}
+  myHeartsArray:
+    hearts: []
 --- !u!4 &1450252368
 Transform:
   m_ObjectHideFlags: 0
