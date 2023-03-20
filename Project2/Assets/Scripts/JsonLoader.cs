@@ -4,24 +4,33 @@ using UnityEngine;
 public class JsonLoader : MonoBehaviour
 {
     public TextAsset textJSON;
-    [SerializeField] public GameObject heartsObject;
-    public Heart[] heartsArray;
+    public GameObject hearts;
 
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class Hearts
     {
-        //for (int i = 0; i < heartsArray.Length; i++)
-        //{
-        //    heartsArray[i] = heartsObject.transform.GetChild(i).gameObject.GetComponent<Heart>();
-        //    print(heartsArray[i]);
-        //}
-
-        heartsArray = JsonUtility.FromJson<Heart[]>(textJSON.text);
+        public Emotion[] answers;
     }
 
-    // Update is called once per frame
-    void Update()
+    [System.Serializable]
+    public class HeartsArray
     {
+        public Hearts[] hearts;
+    }
+
+    public HeartsArray myHeartsArray = new HeartsArray();
+
+    void Start()
+    {
+        // parse the json
+        myHeartsArray = JsonUtility.FromJson<HeartsArray>(textJSON.text);
+
+        // setup the hearts
+        GameObject[] changeHearts = new GameObject[3];
+        for (int i = 0; i < changeHearts.Length; i++)
+        {
+            changeHearts[i] = hearts.transform.GetChild(i).gameObject;
+        }
         
     }
 }

@@ -1,13 +1,13 @@
 {
-    "Heart": [
+    "hearts": [
         {
-            "answers": [0, 1]
+            "answers": [0, 0]
         },
         {
-            "answers": [1, 2]
+            "answers": [0, 0]
         },
         {
-            "answers": [2, 3]
+            "answers": [0, 0]
         }
     ]
 }

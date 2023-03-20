@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Heart : MonoBehaviour
 {
-    [SerializeField] List<Emotion> answers;
+    [SerializeField] public List<Emotion> answers;
 
     /// <summary>
     /// Test code disregard
