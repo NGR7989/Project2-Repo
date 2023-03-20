@@ -26,11 +26,11 @@ public class JsonLoader : MonoBehaviour
         myHeartsArray = JsonUtility.FromJson<HeartsArray>(textJSON.text);
 
         // setup the hearts
-        GameObject[] changeHearts = new GameObject[3];
+        Heart[] changeHearts = new Heart[3];
         for (int i = 0; i < changeHearts.Length; i++)
         {
-            changeHearts[i] = hearts.transform.GetChild(i).gameObject;
+            changeHearts[i] = hearts.transform.GetChild(i).gameObject.GetComponent<Heart>();
+            // changeHearts[i].GetComponent<Emotion[]>() = myHeartsArray.hearts[i];
         }
-        
     }
 }
