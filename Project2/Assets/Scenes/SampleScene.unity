@@ -5629,12 +5629,24 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[1].desc
+      value: These are the  hearts
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[2].desc
+      value: Here you can ask it some questions
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: tutorialParts.Array.data[0].radius
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: tutorialParts.Array.data[1].radius
-      value: 0.3
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[2].radius
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: tutorialParts.Array.data[0].focusPoint.x
@@ -5642,10 +5654,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: tutorialParts.Array.data[1].focusPoint.x
-      value: 0
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: tutorialParts.Array.data[1].focusPoint.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[2].focusPoint.y
       value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
