@@ -5637,6 +5637,18 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[0].focusPoint.x
+      value: -220
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[1].focusPoint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: tutorialParts.Array.data[1].focusPoint.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: textBoxAnimDetails.offsets.Array.data[0].x
       value: 100
       objectReference: {fileID: 0}
