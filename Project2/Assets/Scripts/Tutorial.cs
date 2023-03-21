@@ -163,8 +163,17 @@ public class Tutorial : MonoBehaviour
             lerp += Time.deltaTime * textBoxAnimDetails.appearSpeed;
             yield return null;
         }
-
-        dialogueManager.ReadDialogue(heldText, textMesh, textBoxAnimDetails.writeWaitTime);
+        
+        while(true)
+        {
+            // Only continue if dialogue is reading 
+            if(dialogueManager.ReadDialogue(heldText, textMesh, textBoxAnimDetails.writeWaitTime))
+            {
+                break;
+            }
+            yield return null;
+        }
+        
         currentCo = null;
     }
 

@@ -22,16 +22,15 @@ public class DialogueManager : MonoBehaviour
         // ReadDialogue(testText, testTextMesh, testTextSpeed);
     }
 
-    public void ReadDialogue(string text, TextMeshProUGUI textMesh, float pauseTime)
+    public bool ReadDialogue(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
 
         if (clearCoroutines.ContainsKey(textMesh))
         {
-
             // Don't continue if something is working on that textMesh
             if (dialogueCoroutines[textMesh] != null)
             {
-                return;
+                return false;
             }
         }
 
@@ -46,6 +45,8 @@ public class DialogueManager : MonoBehaviour
             // Clearing must be considered 
             RunReadDialogueAfterClearing(text, textMesh, pauseTime);
         }
+
+        return true;
     }
 
     private void SafeAddTyping(string text, TextMeshProUGUI textMesh, float pauseTime)
