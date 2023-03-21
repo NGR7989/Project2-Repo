@@ -1,35 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ChoiceSystem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] UIManager ui;
-    [SerializeField] GameObject endScreen;
+    [SerializeField] GameObject burnScreen;
+    [SerializeField] GameObject endcreen;
 
     [Header("Settings")]
     [Tooltip("Index of main list relates to the current level")]
     [SerializeField] List<LevelData> levels;
 
+    [Header("Animation")]
+    [SerializeField] EndScreenAnimDetails endScreenAnimDetails;
 
     private int currentLevel;
     private int currentHeartIndex;
     private Head currentHead;
     private Heart currentHeart { get { return levels[currentLevel].hearts[currentHeartIndex]; } }
 
+    private bool canBurn;
+
+    private void Awake()
+    {
+        canBurn = false;
+    }
+
     private void Start()
     {
         InitializeData();
+        canBurn = true;
     }
 
     private void Update()
     {
         // Check if player every tries to burn current pair 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return) && canBurn)
         {
-            print(currentHeart.CorrectMatch());
-            endScreen.SetActive(true);
+            if(currentHeart.CorrectMatch())
+            {
+                burnScreen.SetActive(true);
+                if(currentLevel + 1 < levels.Count)
+                {
+                    // Move to next level 
+                    currentLevel++;
+                    print(currentLevel);
+                    ui.SetUpLevel(
+                        levels[currentLevel].questions[0],
+                        levels[currentLevel].questions[1],
+                        levels[currentLevel].questions[2]
+                    );
+                    StartCoroutine(FadeBurnScreen());
+                }
+                else
+                {
+                    // End game
+                    endcreen.SetActive(true);
+                }
+            }
         }
     }
 
@@ -88,6 +120,11 @@ public class ChoiceSystem : MonoBehaviour
         return currentHeart.GetSprite;
     }
 
+    public Sprite GetHeadSprite()
+    {
+        return levels[currentLevel].head.GetSprite;
+    }
+
     /// <summary>
     /// Call when the player makes a choice from the pool of questions 
     /// </summary>
@@ -108,11 +145,35 @@ public class ChoiceSystem : MonoBehaviour
         ui.DisplayDialogue(headResponse, heartResponse);
     }
 
+    private IEnumerator FadeBurnScreen() // TODO: SHOULD BE DONE IN UI MANAGER 
+    {
+        float lerp = 0;
+        canBurn = false;
+
+        while (lerp <= 1)
+        {
+            endScreenAnimDetails.image.color = Color.Lerp(Color.black, Color.clear, lerp);
+            endScreenAnimDetails.image.GetComponentInChildren<TextMeshProUGUI>().color = Color.Lerp(Color.white, Color.clear, lerp);
+            lerp += Time.deltaTime * endScreenAnimDetails.speed;
+            yield return null;
+        }
+
+        endScreenAnimDetails.image.gameObject.SetActive(false);
+        canBurn = true;
+    }
+
     [System.Serializable]
     public class LevelData
     {
         [SerializeField] public Head head;
         [SerializeField] public List<string> questions;
         [SerializeField] public List<Heart> hearts;
+    }
+
+    [System.Serializable]
+    public class EndScreenAnimDetails
+    {
+        [SerializeField] public Image image;
+        [SerializeField] public float speed;
     }
 }

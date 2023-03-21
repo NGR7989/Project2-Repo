@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueBox;
     [SerializeField] TextMeshProUGUI q1Text, q2Text, q3Text;
     [Space]
+    [SerializeField] Image headRenderer;
     [SerializeField] Image heartRenderer;
     [SerializeField] Image emotionRenderer;
 
@@ -62,7 +63,8 @@ public class UIManager : MonoBehaviour
 
     private void DisplayCharacter()
     {
-
+        print(choices.GetHeadSprite().name);
+        headRenderer.sprite = choices.GetHeadSprite();
     }
 
     private void DisplayQuestions(string q1, string q2, string q3)

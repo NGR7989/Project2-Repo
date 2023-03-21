@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &95886306389957396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95886306389957386}
+  - component: {fileID: 95886306389957387}
+  - component: {fileID: 95886306389957385}
+  m_Layer: 0
+  m_Name: Game Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95886306389957386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95886306389957396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 507.6621, y: 275.24225, z: 0.12632143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95886306389957387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95886306389957396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9a4ce5d473714459370f7a0806104e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choices: {fileID: 95886306389957385}
+  dialogue: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  q1Text: {fileID: 0}
+  q2Text: {fileID: 0}
+  q3Text: {fileID: 0}
+  headRenderer: {fileID: 0}
+  heartRenderer: {fileID: 0}
+  emotionRenderer: {fileID: 0}
+  emotions:
+    anger: {fileID: 21300000, guid: c79038efec9345049aee604b791f1de1, type: 3}
+    surprise: {fileID: 21300000, guid: b2fe6be6f119f4c42bfb21cb029d7096, type: 3}
+    disgust: {fileID: 21300000, guid: f300fa92d6504764daeab31beb892d58, type: 3}
+    fear: {fileID: 21300000, guid: 93963c74599afd54ba80597afdf0fe76, type: 3}
+    happy: {fileID: 21300000, guid: 9c9563369c18ba44f826d5d46b9152c2, type: 3}
+    sad: {fileID: 21300000, guid: a117eebb3e445244799b9129e15f99c3, type: 3}
+    indifference: {fileID: 21300000, guid: e0192d955d7a0ca4dafc55bb0e4d8335, type: 3}
+--- !u!114 &95886306389957385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95886306389957396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4006c18514e4c44982c77b28037bcee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 95886306389957387}
+  endScreen: {fileID: 0}
+  levels:
+  - head: {fileID: 0}
+    questions:
+    - Who are you?
+    - What were you doing here?
+    - How did you die?
+    hearts:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - head: {fileID: 0}
+    questions:
+    - Who are you?
+    - What were you doing here?
+    - How did you die?
+    hearts:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  endScreenAnimDetails:
+    image: {fileID: 0}
+    speed: 0.1

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Head : MonoBehaviour
 {
     [SerializeField] List<string> answers;
-    
+    [SerializeField] Sprite sprite;
+    public Sprite GetSprite { get { return sprite; } }
+
     /// <summary>
     /// Returns the answer that is stored in 
     /// the given index of the heads answers list
