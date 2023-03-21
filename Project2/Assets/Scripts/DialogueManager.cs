@@ -107,14 +107,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public Coroutine ClearText(TextMeshProUGUI textMesh, float clearSpeed)
+    {
+        return StartCoroutine(ClearTextCo(textMesh, clearPauseTime));
+    }
+
     /// <summary>
     /// This coroutine clears away all text on a specified 
     /// textmesh 
     /// </summary>
     /// <param name="textMesh"></param>
-    /// <param name="clearSpeed"></param>
+    /// <param name="clearPauseTime"></param>
     /// <returns></returns>
-    private IEnumerator ClearText(TextMeshProUGUI textMesh, float clearSpeed)
+    private IEnumerator ClearTextCo(TextMeshProUGUI textMesh, float clearPauseTime)
     {
         // Clear out other typing if happening at the same time 
         if (dialogueCoroutines.ContainsKey(textMesh))
@@ -129,7 +134,7 @@ public class DialogueManager : MonoBehaviour
         while (textMesh.text.Length > 0)
         {
             textMesh.text = textMesh.text.Remove(textMesh.text.Length - 1, 1);
-            yield return new WaitForSeconds(clearSpeed);
+            yield return new WaitForSeconds(clearPauseTime);
         }
 
         // Cleanup
@@ -174,7 +179,7 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RunReadDialogueAfterClearingCo(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
-        Coroutine clearCo = StartCoroutine(ClearText(textMesh, clearPauseTime));
+        Coroutine clearCo = StartCoroutine(ClearTextCo(textMesh, clearPauseTime));
         yield return clearCo;
         yield return new WaitForSeconds(clearPauseBeforeContinue);
         SafeAddTyping(text, textMesh, pauseTime);
