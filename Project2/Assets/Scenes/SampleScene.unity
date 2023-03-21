@@ -2805,7 +2805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54b771fa604d7041a895775917a9252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearPauseTime: 0.01
+  clearPauseTime: 0.005
   clearPauseBeforeContinue: 0.04
 --- !u!4 &1113535677
 Transform:
