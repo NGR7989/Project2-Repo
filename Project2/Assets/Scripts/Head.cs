@@ -16,4 +16,9 @@ public class Head : MonoBehaviour
     {
         return answers[questionIndex];
     }
+
+    public void LoadHead(List<string> ans)
+    {
+        answers = ans;
+    }
 }

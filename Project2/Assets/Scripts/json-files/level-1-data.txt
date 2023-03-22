@@ -6,15 +6,15 @@
     "hearts": [
         {
             "answers": [0, 0],
-            "tag": "incorrect"
+            "correct": 0
         },
         {
             "answers": [0, 0],
-            "tag": "correct"
+            "correct": 1
         },
         {
             "answers": [0, 0],
-            "tag": "incorrect"
+            "correct": 0
         }
     ]
 }

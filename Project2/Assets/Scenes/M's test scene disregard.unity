@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answers: 
+  correctHeart: 0
 --- !u!1 &1261474510
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +215,7 @@ GameObject:
   - component: {fileID: 1261474511}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Head
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,9 +278,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textJSON:
-  - {fileID: 4900000, guid: 6bd589d04ef862342ae77b5cf59c618d, type: 3}
-  hearts: {fileID: 1482228}
-  myHeartsArray:
+  - {fileID: 4900000, guid: 0d086b5f50570ab408f98d2e670dcf84, type: 3}
+  - {fileID: 4900000, guid: 48b41f485c966cf45af0aa29e77a0197, type: 3}
+  - {fileID: 4900000, guid: ff8e78c59c1956842bf43f06cf63bfc6, type: 3}
+  - {fileID: 4900000, guid: 97d05b1b6fcd5e94e8738557f98a4ff7, type: 3}
+  - {fileID: 4900000, guid: 1b3a1b3e7807b494e9a5efb8daee66be, type: 3}
+  heartsObj: {fileID: 1482228}
+  headObj: {fileID: 1261474510}
+  infoArray:
     head:
       answers: []
     hearts: []
@@ -343,6 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answers: 
+  correctHeart: 0
 --- !u!1 &1941754873
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +446,7 @@ GameObject:
   - component: {fileID: 2147305978}
   m_Layer: 0
   m_Name: heart1
-  m_TagString: Correct
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,3 +479,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answers: 
+  correctHeart: 0

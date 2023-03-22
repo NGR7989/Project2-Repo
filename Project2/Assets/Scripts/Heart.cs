@@ -6,6 +6,7 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     [SerializeField] public List<Emotion> answers;
+    [SerializeField] public bool correctHeart;
 
     /// <summary>
     /// Test code disregard
@@ -34,7 +35,7 @@ public class Heart : MonoBehaviour
     public bool CorrectMatch()
     {
         // Check if the parent object is a head through its tag
-        if (this.gameObject.CompareTag("Correct"))
+        if (correctHeart)
         {
             print("Correct heart - " + this.gameObject.name); // Test code
             return true;
@@ -42,5 +43,11 @@ public class Heart : MonoBehaviour
 
         print("Incorrect heart - " + this.gameObject.name); // Test code
         return false;
+    }
+
+    public void LoadHeart(List<Emotion> ans, bool correct)
+    {
+        answers = ans;
+        correctHeart = correct;
     }
 }
