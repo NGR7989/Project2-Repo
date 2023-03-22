@@ -1,0 +1,20 @@
+{
+    "head": {
+        "answers": ["ans1", "ans2"]
+    },
+
+    "hearts": [
+        {
+            "answers": [0, 0],
+            "tag": "incorrect"
+        },
+        {
+            "answers": [0, 0],
+            "tag": "correct"
+        },
+        {
+            "answers": [0, 0],
+            "tag": "incorrect"
+        }
+    ]
+}
