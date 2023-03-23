@@ -1,19 +1,19 @@
 {
     "head": {
-        "answers": ["ans1", "ans2"]
+        "answers": ["Vergil Kambal, soldier for the Northern Empire.", "Following orders. One of my commanding officers ordered us to ambush a Holy Kingdom camp, but unfortunately reinforcements weren't too far away. This whole thing devolved into a mess.", "I stabbed one of them, but before I could even react, he had stabbed me back. This was all for nothing, that was the end of my story."]
     },
 
     "hearts": [
         {
-            "answers": [0, 0],
-            "correct": 0
-        },
-        {
-            "answers": [0, 0],
+            "answers": [6, 6, 0],
             "correct": 1
         },
         {
-            "answers": [0, 0],
+            "answers": [3, 6, 5],
+            "correct": 0
+        },
+        {
+            "answers": [5, 0, 6],
             "correct": 0
         }
     ]
