@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JsonLoader : MonoBehaviour
 {
-    [SerializeField] public TextAsset[] textJSON;
+    [SerializeField] public List<TextAsset> textJSON;
+    [SerializeField] public List<GameObject> Levels;
     public GameObject heartsObj;
     public GameObject headObj;
     private Head head;
@@ -35,6 +36,16 @@ public class JsonLoader : MonoBehaviour
 
     void Start()
     {
+        // Load the first level
+        LoadLevel(1);
+    }
+
+    void LoadLevel(int levelNum)
+    {
+        // Get the heads and hearts for the given level number
+        headObj = Levels[levelNum - 1].transform.GetChild(0).gameObject;
+        heartsObj = Levels[levelNum - 1].transform.GetChild(1).gameObject;
+
         // Get the head's and hearts' scripts
         head = headObj.GetComponent<Head>();
         hearts = new List<Heart>();
@@ -45,12 +56,6 @@ public class JsonLoader : MonoBehaviour
             hearts.Add(heartsObj.transform.GetChild(i).gameObject.GetComponent<Heart>());
         }
 
-        // Load the first level
-        LoadLevel(1);
-    }
-
-    void LoadLevel(int levelNum)
-    {
         // parse the json
         infoArray = JsonUtility.FromJson<InformationArray>(textJSON[levelNum - 1].text);
 
