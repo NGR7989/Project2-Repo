@@ -112,11 +112,24 @@ public class Tutorial : MonoBehaviour
 
             // Loops until continue is pressed 
             // Will not loop if final animation was just played 
-            while (!Input.GetMouseButtonDown(0) && i < tutorialParts.Count - 1)
+            while (!Input.GetMouseButtonDown(0) || currentCo != null || dialogueManager.IsRunning(textMesh))
             {
+                // Ends if final spot 
+                if(i >= tutorialParts.Count - 1)
+                {
+                    break;
+                }
+
                 yield return null;
             }
+
+            // cleaup 
+            if (currentCo != null)
+            {
+                currentCo = null;
+            }
             
+
             // When moving to next spot textbox dissapears 
             TryBanishTextBox();
         }
