@@ -17,6 +17,11 @@ public class Heart : MonoBehaviour
     /// <returns>answer to the question as an Emotion enum</returns>
     public Emotion AnswerQuestion(int questionIndex)
     {
+        if (questionIndex < 0 || questionIndex >= answers.Count)
+        {
+            return Emotion.Indifference;
+        }
+
         return answers[questionIndex];
     }
 

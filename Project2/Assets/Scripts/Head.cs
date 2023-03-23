@@ -16,6 +16,11 @@ public class Head : MonoBehaviour
     /// <returns>answer to the question in the form of a string</returns>
     public string AnswerQuestion(int questionIndex)
     {
+        if(questionIndex < 0 || questionIndex >= answers.Count)
+        {
+            return "...";
+        }
+
         return answers[questionIndex];
     }
 }
