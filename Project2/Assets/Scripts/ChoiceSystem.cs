@@ -36,8 +36,7 @@ public class ChoiceSystem : MonoBehaviour
         InitializeData();
 
         canBurn = true;
-        currentQuestion = -1;
-        RunPlayerQuestion(-1); // Default show 
+        
     }
 
     private void Update()
@@ -45,27 +44,45 @@ public class ChoiceSystem : MonoBehaviour
         // Check if player every tries to burn current pair 
         if(Input.GetKeyDown(KeyCode.Return) && canBurn)
         {
+            // Check if the correct match 
             if(currentHeart.CorrectMatch())
             {
-                burnScreen.SetActive(true);
-                if(currentLevel + 1 < levels.Count)
-                {
-                    // Move to next level 
-                    currentLevel++;
-                    print(currentLevel);
-                    ui.SetUpLevel(
-                        levels[currentLevel].questions[0],
-                        levels[currentLevel].questions[1],
-                        levels[currentLevel].questions[2]
-                    );
-                    StartCoroutine(FadeBurnScreen());
-                }
-                else
-                {
-                    // End game
-                    endcreen.SetActive(true);
-                }
+                LoadNextLevel();
             }
+            else
+            {
+                // Fail game 
+            }
+        }
+    }
+
+    private void LoadNextLevel()
+    {
+        burnScreen.SetActive(true);
+        if (currentLevel + 1 < levels.Count)
+        {
+            // Move to next level 
+            currentLevel++;
+
+            // Reset to default values 
+            currentQuestion = -1;
+            RunPlayerQuestion(-1); // Default show 
+
+            // Since 3 queations is our hard amount we manually put them in 
+            ui.SetUpLevel(
+                levels[currentLevel].questions[0],
+                levels[currentLevel].questions[1],
+                levels[currentLevel].questions[2]
+            );
+
+            // Fades out to show new scene 
+            StartCoroutine(FadeBurnScreen());
+        }
+        else
+        {
+            // End game
+            endcreen.SetActive(true);
+            canBurn = false;
         }
     }
 
