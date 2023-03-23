@@ -20,6 +20,7 @@ public class ChoiceSystem : MonoBehaviour
 
     private int currentLevel;
     private int currentHeartIndex;
+    private int currentQuestion;
     private Head currentHead;
     private Heart currentHeart { get { return levels[currentLevel].hearts[currentHeartIndex]; } }
 
@@ -33,7 +34,10 @@ public class ChoiceSystem : MonoBehaviour
     private void Start()
     {
         InitializeData();
+
         canBurn = true;
+        currentQuestion = -1;
+        RunPlayerQuestion(-1); // Default show 
     }
 
     private void Update()
@@ -112,7 +116,7 @@ public class ChoiceSystem : MonoBehaviour
 
         // Sets to new index after processing 
         currentHeartIndex = nextIndex;
-        print("New heart is " + currentHeart.name);
+        ui.DisplayEmotion(currentHeart.AnswerQuestion(currentQuestion));
     }
 
     public Sprite GetHeartTexutre()
@@ -133,6 +137,7 @@ public class ChoiceSystem : MonoBehaviour
     {
         // Make sure int is within range of head and hearts 
         // Default is "..." and "indifference" 
+        currentQuestion = questionIndex;
 
         // Runs index through head question function and hold string 
         // Runs index through heart question function and hold enum

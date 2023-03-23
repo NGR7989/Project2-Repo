@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image emotionRenderer;
 
     [Header("Texture References")]
-    [SerializeField] Emotions emotions;
+    [SerializeField] EmotionTextures emotions;
 
     private string currentResponse;
 
@@ -57,13 +57,18 @@ public class UIManager : MonoBehaviour
         dialogue.ReadDialogue(headResponse, dialogueBox, 0.05f);
         currentResponse = headResponse;
 
+        DisplayEmotion(heartResponse);
+     }
+
+    public void DisplayEmotion(Emotion heartResponse)
+    {
         // Sets the new sprite based on emotion
-        emotionRenderer.sprite = emotions.GetSprite(heartResponse); 
+        emotionRenderer.sprite = emotions.GetSprite(heartResponse);
+
     }
 
     private void DisplayCharacter()
     {
-        print(choices.GetHeadSprite().name);
         headRenderer.sprite = choices.GetHeadSprite();
     }
 
@@ -100,7 +105,7 @@ public class UIManager : MonoBehaviour
 
 
     [System.Serializable]
-    private struct Emotions
+    private struct EmotionTextures
     {
         [SerializeField] public Sprite anger;
         [SerializeField] public Sprite surprise;
