@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     [Header("Texture References")]
     [SerializeField] EmotionTextures emotions;
 
+    [Header("Emotion Animation")]
+    [SerializeField] List<EmotionAnimation> emotionAnimation;
+
     private string currentResponse;
 
     private void Start()
@@ -136,5 +139,35 @@ public class UIManager : MonoBehaviour
                     return indifference;
             }
         }
+    }
+
+    [System.Serializable]
+    private class EmotionAnimation
+    {
+        [SerializeField] public Emotion emotion;
+        [SerializeField] AnimationDetails animDetails;
+    }
+
+    [System.Serializable]
+    private class AnimationDetails
+    {
+        [Header("Heart Beat Anim")]
+        [SerializeField] float beatOutSpeed;
+        [SerializeField] float beatInSpeed;
+        [SerializeField] float pauseBetweenBeats;
+        [SerializeField] AnimationCurve beatOutCurve;
+        [SerializeField] AnimationCurve beatInCurve;
+        [SerializeField] Vector3 beatOutScale;
+
+        [Header("Breathe Anim")]
+        [SerializeField] float moveToTargetSpeed;
+        [SerializeField] float moveToTHoldSpeed;
+        [SerializeField] AnimationCurve toTargetCurve;
+        [SerializeField] AnimationCurve toHoldCurve;
+        [SerializeField] Vector3 targetOffset;
+        [Space]
+        [SerializeField] float tiltSpeed;
+        [SerializeField] float angle;
+        [SerializeField] AnimationCurve tiltCurve;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Breathe : MonoBehaviour
 {
     [SerializeField] float moveToTargetSpeed;
-    [SerializeField] float moveToTHoldSpeed;
+    [SerializeField] float moveToHoldSpeed;
 
     [SerializeField] AnimationCurve toTargetCurve;
     [SerializeField] AnimationCurve toHoldCurve;
@@ -27,6 +27,14 @@ public class Breathe : MonoBehaviour
 
         StartCoroutine(Bounce());
         StartCoroutine(Tilt());
+    }
+
+    public void Initialize(float _moveToTargetSpeed, float _moveToHoldSpeed, AnimationCurve _toTargetCurve, AnimationCurve _toHoldCurve, Vector3 _targetOffset, float _tiltSpeed, float _angle)
+    {
+        /*moveToTargetSpeed = _moveToTargetSpeed;
+        moveToHoldSpeed = _moveToHoldSpeed;
+
+        toTargetCurve = */
     }
 
     private IEnumerator Bounce()
@@ -54,7 +62,7 @@ public class Breathe : MonoBehaviour
 
                 rect.localPosition = Vector3.Lerp(holdPos + targetOffset, holdPos, toHoldCurve.Evaluate(lerp));
 
-                lerp += Time.deltaTime * moveToTHoldSpeed;
+                lerp += Time.deltaTime * moveToHoldSpeed;
                 yield return null;
             }
         }
