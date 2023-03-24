@@ -45,22 +45,11 @@ public class ChoiceSystem : MonoBehaviour
 
     private void Update()
     {
-        // Check if player every tries to burn current pair 
+        /*// Check if player every tries to burn current pair 
         if(Input.GetKeyDown(KeyCode.Return) && canBurn)
         {
-            // Play burn sound effect
-            soundScript.BurnSound();
-
-            // Check if the correct match 
-            if(currentHeart.CorrectMatch())
-            {
-                LoadNextLevel();
-            }
-            else
-            {
-                // Fail game 
-            }
-        }
+            TryBurn();
+        }*/
     }
 
     private void LoadNextLevel()
@@ -178,6 +167,22 @@ public class ChoiceSystem : MonoBehaviour
         // Runs emotion of heart through heart display in UI
         
         ui.DisplayDialogue(headResponse, heartResponse);
+    }
+
+    public void TryBurn()
+    {
+        // Play burn sound effect
+        soundScript.BurnSound();
+
+        // Check if the correct match 
+        if (currentHeart.CorrectMatch())
+        {
+            LoadNextLevel();
+        }
+        else
+        {
+            // Fail game 
+        }
     }
 
     private IEnumerator FadeBurnScreen() // TODO: SHOULD BE DONE IN UI MANAGER 
