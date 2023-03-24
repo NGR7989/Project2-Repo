@@ -18,6 +18,10 @@ public class ChoiceSystem : MonoBehaviour
     [Header("Animation")]
     [SerializeField] EndScreenAnimDetails endScreenAnimDetails;
 
+    [Header("Sound")]
+    [SerializeField] GameObject soundManager;
+    private SoundManager soundScript;
+
     private int currentLevel;
     private int currentHeartIndex;
     private int currentQuestion;
@@ -44,6 +48,9 @@ public class ChoiceSystem : MonoBehaviour
         // Check if player every tries to burn current pair 
         if(Input.GetKeyDown(KeyCode.Return) && canBurn)
         {
+            // Play burn sound effect
+            soundScript.BurnSound();
+
             // Check if the correct match 
             if(currentHeart.CorrectMatch())
             {
@@ -104,6 +111,9 @@ public class ChoiceSystem : MonoBehaviour
             levels[currentLevel].questions[1],
             levels[currentLevel].questions[2]
             );
+
+        // Get the sound script
+        soundScript = soundManager.GetComponent<SoundManager>();
     }
 
     public void ChangeHeart(bool isPositive)
@@ -161,9 +171,12 @@ public class ChoiceSystem : MonoBehaviour
         string headResponse = currentHead.AnswerQuestion(questionIndex);
         Emotion heartResponse = currentHeart.AnswerQuestion(questionIndex);
 
+        // Play the question sound effect
+        soundScript.QuestionSound();
+
         // Runs response of head through dialogue 
         // Runs emotion of heart through heart display in UI
-
+        
         ui.DisplayDialogue(headResponse, heartResponse);
     }
 

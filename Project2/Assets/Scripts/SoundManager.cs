@@ -29,12 +29,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void BurnSound()
+    public void BurnSound()
     {
         burn.Play();
     }
 
-    void QuestionSound()
+    public void QuestionSound()
     {
         question.Play();
     }
