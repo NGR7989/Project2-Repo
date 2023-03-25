@@ -10,6 +10,7 @@ public class ChoiceSystem : MonoBehaviour
     [SerializeField] UIManager ui;
     [SerializeField] GameObject burnScreen;
     [SerializeField] GameObject endcreen;
+    [SerializeField] JsonLoader levelLoader;
 
     [Header("Settings")]
     [Tooltip("Index of main list relates to the current level")]
@@ -59,6 +60,9 @@ public class ChoiceSystem : MonoBehaviour
         {
             // Move to next level 
             currentLevel++;
+
+            // load the next levels head and heart data
+            levelLoader.LoadLevel(currentLevel + 1);
 
             // Reset to default values 
             currentQuestion = -1;

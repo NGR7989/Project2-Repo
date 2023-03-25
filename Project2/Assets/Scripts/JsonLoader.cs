@@ -40,8 +40,11 @@ public class JsonLoader : MonoBehaviour
         LoadLevel(1);
     }
 
-    void LoadLevel(int levelNum)
+    public void LoadLevel(int levelNum)
     {
+        // Test code disregard
+        print("Level loading started for level " + levelNum);
+
         // Get the heads and hearts for the given level number
         headObj = Levels[levelNum - 1].transform.GetChild(0).gameObject;
         heartsObj = Levels[levelNum - 1].transform.GetChild(1).gameObject;
