@@ -11,6 +11,7 @@ public class ChoiceSystem : MonoBehaviour
     [SerializeField] GameObject burnScreen;
     [SerializeField] GameObject failScreen;
     [SerializeField] GameObject endcreen;
+    [SerializeField] TextMeshProUGUI scoreMesh;
     [SerializeField] JsonLoader levelLoader;
 
     [Header("Settings")]
@@ -84,6 +85,28 @@ public class ChoiceSystem : MonoBehaviour
             // End game
             endcreen.SetActive(true);
             canBurn = false;
+
+            scoreMesh.text = "You got " + correctBurnCount + " correct burns... ";
+
+            // Apply the score 
+            switch (correctBurnCount)
+            {
+                case 0:
+                    scoreMesh.text += "No souls rest on your watch.";
+                    break;
+                case 1:
+                    scoreMesh.text += "Helping one person is better then none";
+                    break;
+                case 4:
+                    scoreMesh.text += "Almost all matches are correct!";
+                    break;
+                case 5:
+                    scoreMesh.text += "You were able to help everyone move on. Amazing job!";
+                    break;
+                default:
+                    scoreMesh.text += "You were able to help some souls move on";
+                    break;
+            }
         }
     }
 
