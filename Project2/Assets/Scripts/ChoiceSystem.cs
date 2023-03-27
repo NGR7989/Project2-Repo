@@ -71,6 +71,8 @@ public class ChoiceSystem : MonoBehaviour
 
             // Reset to default values 
             currentQuestion = -1;
+            currentHead = levels[currentLevel].head;
+
             RunPlayerQuestion(-1); // Default show 
 
             // Since 3 queations is our hard amount we manually put them in 
