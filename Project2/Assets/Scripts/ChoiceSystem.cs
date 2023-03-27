@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ChoiceSystem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] UIManager ui;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] GameObject burnScreen;
     [SerializeField] GameObject failScreen;
     [SerializeField] GameObject endcreen;
@@ -33,30 +35,37 @@ public class ChoiceSystem : MonoBehaviour
     private Head currentHead;
     private Heart currentHeart { get { return levels[currentLevel].hearts[currentHeartIndex]; } }
 
-    private bool canBurn;
+    public bool canBurn { get; set; }
 
+    private bool gameOver;
 
 
     private void Awake()
     {
         canBurn = false;
+        gameOver = false;
     }
 
     private void Start()
     {
         InitializeData();
 
-        canBurn = true;
-        
     }
 
     private void Update()
     {
-        /*// Check if player every tries to burn current pair 
-        if(Input.GetKeyDown(KeyCode.Return) && canBurn)
+        if(gameOver)
         {
-            TryBurn();
-        }*/
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void LoadNextLevel()
@@ -73,7 +82,9 @@ public class ChoiceSystem : MonoBehaviour
             currentQuestion = -1;
             currentHead = levels[currentLevel].head;
 
+            
             RunPlayerQuestion(-1); // Default show 
+            //dialogueManager.StopDialogue(ui.dialogueBox);
 
             // Since 3 queations is our hard amount we manually put them in 
             ui.SetUpLevel(
@@ -97,7 +108,7 @@ public class ChoiceSystem : MonoBehaviour
                     scoreMesh.text += "No souls rest on your watch.";
                     break;
                 case 1:
-                    scoreMesh.text += "Helping one person is better then none";
+                    scoreMesh.text += "Helping one person is better then no one";
                     break;
                 case 4:
                     scoreMesh.text += "Almost all matches are correct!";
@@ -109,6 +120,8 @@ public class ChoiceSystem : MonoBehaviour
                     scoreMesh.text += "You were able to help some souls move on";
                     break;
             }
+
+            gameOver = true;
         }
     }
 
@@ -138,6 +151,11 @@ public class ChoiceSystem : MonoBehaviour
 
     public void ChangeHeart(bool isPositive)
     {
+        if (!canBurn)
+        {
+            return;
+        }
+
         int nextIndex = currentHeartIndex;
 
         if(isPositive)
@@ -182,6 +200,11 @@ public class ChoiceSystem : MonoBehaviour
     /// <param name="questionIndex"></param>
     public void RunPlayerQuestion(int questionIndex)
     {
+        if(!canBurn)
+        {
+            return;
+        }
+
         // Make sure int is within range of head and hearts 
         // Default is "..." and "indifference" 
         currentQuestion = questionIndex;
@@ -202,6 +225,12 @@ public class ChoiceSystem : MonoBehaviour
 
     public void TryBurn()
     {
+        print(canBurn);
+        if (!canBurn)
+        {
+            return;
+        }
+
         // Play burn sound effect
         soundScript.BurnSound();
 
@@ -243,6 +272,8 @@ public class ChoiceSystem : MonoBehaviour
 
         details.image.gameObject.SetActive(false);
         canBurn = true;
+
+        //dialogueManager.ClearText(ui.dialogueBox, 0.01f);
     }
 
     [System.Serializable]

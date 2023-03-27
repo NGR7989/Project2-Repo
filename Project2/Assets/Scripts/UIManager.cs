@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] DialogueManager dialogue;
 
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI dialogueBox;
+    [SerializeField] public TextMeshProUGUI dialogueBox;
     [SerializeField] TextMeshProUGUI q1Text, q2Text, q3Text;
     [Space]
     [SerializeField] Image headRenderer;
@@ -43,7 +43,9 @@ public class UIManager : MonoBehaviour
     {
         DisplayQuestions(q1, q2, q3);
         DisplayCharacter(); // Take in a texture? 
+        heartRenderer.sprite = choices.GetHeartTexutre();
     }
+
 
     /// <summary>
     /// Displays the reponse from both the head and heart 

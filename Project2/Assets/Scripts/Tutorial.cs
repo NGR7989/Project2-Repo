@@ -24,6 +24,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject gameManager;
     [SerializeField] GameObject tutCanvas;
     [SerializeField] DialogueManager dialogueManager;
+    [SerializeField] ChoiceSystem choiceSystem;
 
     private string heldText;
 
@@ -136,6 +137,8 @@ public class Tutorial : MonoBehaviour
 
         // Re enable everything 
         gameManager.SetActive(true);
+
+        choiceSystem.canBurn = true;
 
         // No longer needed
         Destroy(tutCanvas);

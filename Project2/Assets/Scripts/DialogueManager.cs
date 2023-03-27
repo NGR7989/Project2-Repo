@@ -49,6 +49,15 @@ public class DialogueManager : MonoBehaviour
         return true;
     }
 
+    public void StopDialogue(TextMeshProUGUI key)
+    {
+        if (dialogueCoroutines.ContainsKey(key))
+        {
+            StopCoroutine(dialogueCoroutines[key]);
+            dialogueCoroutines[key] = null;
+        }
+    }
+
     private void SafeAddTyping(string text, TextMeshProUGUI textMesh, float pauseTime)
     {
         // Checks index for active coroutines

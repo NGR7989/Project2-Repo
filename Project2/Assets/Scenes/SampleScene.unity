@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e03991817213daa4ba3b8568a09c4969, type: 3}
+      objectReference: {fileID: 21300000, guid: 482ebfdf6d7e01b459b9d19a7030a4d3, type: 3}
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: answers.Array.data[0]
       value: Vergil Kambal, soldier for the Northern  Empire.
@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4f05dbf176b925c4284dbbc5efa98398, type: 3}
+      objectReference: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -1423,7 +1423,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c2ed8471ea6aae04c96a15a0e96edd59, type: 3}
+      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -1813,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
+      objectReference: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -2042,7 +2042,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4f05dbf176b925c4284dbbc5efa98398, type: 3}
+      objectReference: {fileID: 21300000, guid: c2ed8471ea6aae04c96a15a0e96edd59, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -2495,7 +2495,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c2ed8471ea6aae04c96a15a0e96edd59, type: 3}
+      objectReference: {fileID: 21300000, guid: c02b39665cf8cff4e9be4235c4d0070f, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -2817,7 +2817,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e03991817213daa4ba3b8568a09c4969, type: 3}
+      objectReference: {fileID: 21300000, guid: 1600d29f7b318694ba8d5862aecf5c8a, type: 3}
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: answers.Array.data[0]
       value: Vergil Kambal, soldier for the Northern  Empire.
@@ -2933,7 +2933,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
+      objectReference: {fileID: 21300000, guid: 4f05dbf176b925c4284dbbc5efa98398, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -3060,7 +3060,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c2ed8471ea6aae04c96a15a0e96edd59, type: 3}
+      objectReference: {fileID: 21300000, guid: 2f0bc0f157c949043b9c54df43395e41, type: 3}
     - target: {fileID: 4573411902069686081, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: texture
       value: 
@@ -4716,6 +4716,233 @@ AudioSource:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1172686176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172686177}
+  - component: {fileID: 1172686179}
+  - component: {fileID: 1172686178}
+  - component: {fileID: 1172686180}
+  m_Layer: 5
+  m_Name: Text (TMP) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1172686177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172686176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1683362604}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -156.5}
+  m_SizeDelta: {x: 458.4968, y: 111.1878}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1172686178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172686176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Press [ESC] to Quit
+
+    Press [R] to Restart'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4d745d50c6873974187b9d16266e35e9, type: 2}
+  m_sharedMaterial: {fileID: 5655820348111541544, guid: 4d745d50c6873974187b9d16266e35e9, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1172686179
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172686176}
+  m_CullTransparentMesh: 1
+--- !u!114 &1172686180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172686176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43eb526b4ebdf154f85c3cdd354fb96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveToTargetSpeed: 1
+  moveToHoldSpeed: 1
+  toTargetCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  toHoldCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  targetOffset: {x: 0, y: 5, z: 0}
+  tiltSpeed: 0
+  angle: 0
+  tiltCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -6602,6 +6829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1587476272}
+  dialogueManager: {fileID: 0}
   burnScreen: {fileID: 208081848}
   failScreen: {fileID: 492455086}
   endcreen: {fileID: 1683362603}
@@ -6970,8 +7198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444, y: -28}
-  m_SizeDelta: {x: 265.325, y: 131.6563}
+  m_AnchoredPosition: {x: 0, y: -17.7657}
+  m_SizeDelta: {x: 458.4968, y: 111.1878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677140364
 MonoBehaviour:
@@ -7087,7 +7315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1683362604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7102,6 +7330,7 @@ RectTransform:
   m_Children:
   - {fileID: 1978892206}
   - {fileID: 1677140363}
+  - {fileID: 1172686177}
   m_Father: {fileID: 1123786121}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7284,7 +7513,7 @@ PrefabInstance:
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e03991817213daa4ba3b8568a09c4969, type: 3}
+      objectReference: {fileID: 21300000, guid: 3e4dd9039c5d65d459d83839f1232a01, type: 3}
     - target: {fileID: 4573411902069686080, guid: 3d88bf39888c12f43ad1ed421dbd69c9, type: 3}
       propertyPath: answers.Array.data[0]
       value: Vergil Kambal, soldier for the Northern  Empire.
@@ -8744,6 +8973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5781247681741811086, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5781247681741811088, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -8792,6 +9025,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1587476271}
+    - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
+      propertyPath: choiceSystem
+      value: 
+      objectReference: {fileID: 1587476274}
     - target: {fileID: 5781247681741811089, guid: f3b197c0df592e344bd8bd7493359149, type: 3}
       propertyPath: dialogueManager
       value: 
