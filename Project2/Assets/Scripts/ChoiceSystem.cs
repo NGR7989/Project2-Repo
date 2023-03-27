@@ -9,6 +9,7 @@ public class ChoiceSystem : MonoBehaviour
     [Header("References")]
     [SerializeField] UIManager ui;
     [SerializeField] GameObject burnScreen;
+    [SerializeField] GameObject failScreen;
     [SerializeField] GameObject endcreen;
     [SerializeField] JsonLoader levelLoader;
 
@@ -17,12 +18,14 @@ public class ChoiceSystem : MonoBehaviour
     [SerializeField] List<LevelData> levels;
 
     [Header("Animation")]
-    [SerializeField] EndScreenAnimDetails endScreenAnimDetails;
+    [SerializeField] EndScreenAnimDetails burnCorrectAnimDetails;
+    [SerializeField] EndScreenAnimDetails burnFailAnimDetails;
 
     [Header("Sound")]
     [SerializeField] GameObject soundManager;
     private SoundManager soundScript;
 
+    private int correctBurnCount;
     private int currentLevel;
     private int currentHeartIndex;
     private int currentQuestion;
@@ -30,6 +33,8 @@ public class ChoiceSystem : MonoBehaviour
     private Heart currentHeart { get { return levels[currentLevel].hearts[currentHeartIndex]; } }
 
     private bool canBurn;
+
+
 
     private void Awake()
     {
@@ -55,7 +60,6 @@ public class ChoiceSystem : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        burnScreen.SetActive(true);
         if (currentLevel + 1 < levels.Count)
         {
             // Move to next level 
@@ -74,9 +78,6 @@ public class ChoiceSystem : MonoBehaviour
                 levels[currentLevel].questions[1],
                 levels[currentLevel].questions[2]
             );
-
-            // Fades out to show new scene 
-            StartCoroutine(FadeBurnScreen());
         }
         else
         {
@@ -94,6 +95,7 @@ public class ChoiceSystem : MonoBehaviour
         // Get all the head and heart data
         // Pass into UI manager 
 
+        correctBurnCount = 0;
         currentLevel = 0;
         currentHeartIndex = 0;
 
@@ -181,28 +183,40 @@ public class ChoiceSystem : MonoBehaviour
         // Check if the correct match 
         if (currentHeart.CorrectMatch())
         {
+            // Pass level 
+            correctBurnCount++;
+            burnScreen.SetActive(true);
             LoadNextLevel();
+
+            // Fades out to show new scene 
+            StartCoroutine(FadeBurnScreen(burnCorrectAnimDetails));
+
         }
         else
         {
-            // Fail game 
+            // Fail Level 
+            failScreen.SetActive(true);
+            LoadNextLevel();
+
+            // Fades out to show new scene 
+            StartCoroutine(FadeBurnScreen(burnFailAnimDetails));
         }
     }
 
-    private IEnumerator FadeBurnScreen() // TODO: SHOULD BE DONE IN UI MANAGER 
+    private IEnumerator FadeBurnScreen(EndScreenAnimDetails details) // TODO: SHOULD BE DONE IN UI MANAGER 
     {
         float lerp = 0;
         canBurn = false;
 
         while (lerp <= 1)
         {
-            endScreenAnimDetails.image.color = Color.Lerp(Color.black, Color.clear, lerp);
-            endScreenAnimDetails.image.GetComponentInChildren<TextMeshProUGUI>().color = Color.Lerp(Color.white, Color.clear, lerp);
-            lerp += Time.deltaTime * endScreenAnimDetails.speed;
+            details.image.color = Color.Lerp(Color.black, Color.clear, lerp);
+            details.image.GetComponentInChildren<TextMeshProUGUI>().color = Color.Lerp(Color.white, Color.clear, lerp);
+            lerp += Time.deltaTime * details.speed;
             yield return null;
         }
 
-        endScreenAnimDetails.image.gameObject.SetActive(false);
+        details.image.gameObject.SetActive(false);
         canBurn = true;
     }
 
