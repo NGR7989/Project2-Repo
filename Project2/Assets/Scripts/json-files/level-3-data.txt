@@ -1,6 +1,6 @@
 {
     "head": {
-        "answers": ["Uhh...Kelder...yeah, let's go with that.", "I was uhh...repossessing some items from the Holy Kingdoms soldiers.", "While I was repossessing, one of their tents was set on fire, the one I just so happened to be in. Can't believe I let that happen, I was careless. I'd slap myself if I wasn't already dead!"]
+        "answers": ["Uhh...Kelder...yeah, let's go with that.", "I was uhh...repossessing some items from the Holy Kingdoms soldiers.", "While I was repossessing, one of their tents was set on fire, the one I just so happened to be in. Can't believe I let that happen, I was careless."]
     },
 
     "hearts": [

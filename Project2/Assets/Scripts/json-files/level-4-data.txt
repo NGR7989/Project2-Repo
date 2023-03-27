@@ -1,6 +1,6 @@
 {
     "head": {
-        "answers": ["You don't know me? I'm Tirsan Magos, the original necromancer who was assigned to this job.", "I was attempting to live up to all my accomplishments as a necromancer, but it seems I completely screwed up the job. I am so sorry that you have to fix my mistakes.", "I was attempting to guide these poor souls to the afterlife, but something ran amuck and caused a burst of energy that almost instantaneously extinguished my life."]
+        "answers": ["You don't know me? I'm Tirsan Magos, the original necromancer who was assigned to this job.", "I was attempting to live up to all my accomplishments as a necromancer, but it seems I completely screwed up the job. I am so sorry that you have to fix my mistakes.", "I was attempting to guide these poor souls to the afterlife, but something ran amuck and caused a burst of deadly energy."]
     },
 
     "hearts": [

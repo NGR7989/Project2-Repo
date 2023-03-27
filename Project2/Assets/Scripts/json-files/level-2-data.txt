@@ -1,6 +1,6 @@
 {
     "head": {
-        "answers": ["Vergil Kambal, soldier for the Northern Empire.", "Following orders. One of my commanding officers ordered us to ambush a Holy Kingdom camp, but unfortunately reinforcements weren't too far away. This whole thing devolved into a mess.", "I stabbed one of them, but before I could even react, he had stabbed me back. This was all for nothing, that was the end of my story."]
+        "answers": ["Vergil Kambal, soldier for the Northern Empire.", "My commanding officer ordered us to ambush a Holy Kingdom camp, but unfortunately reinforcements weren't too far away.", "I stabbed one of them, but before I could even react, he had stabbed me back. This was all for nothing, that was the end of my story."]
     },
 
     "hearts": [
