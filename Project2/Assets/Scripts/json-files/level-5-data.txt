@@ -1,20 +1,20 @@
 {
     "head": {
-        "answers": ["ans1", "ans2"]
+        "answers": ["Idan Zhabe, researcher of many things, especially things involving humans.", "I was hiding in a bush observing the skirmish. What can I say, curiosity killed the spriggan.", "While I was observing from the bush, someone must have come up behind me and...I don't even want to think about it."]
     },
 
     "hearts": [
         {
-            "answers": [0, 0],
+            "answers": [6, 4, 2],
             "correct": 0
         },
         {
-            "answers": [0, 0],
+            "answers": [5, 0, 2],
+            "correct": 0
+        },
+        {
+            "answers": [1, 6, 5],
             "correct": 1
-        },
-        {
-            "answers": [0, 0],
-            "correct": 0
         }
     ]
 }
